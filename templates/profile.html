@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}Profile{% endblock %}
+{% block content %}
+<h2>Your Bookings</h2>
+<ul>
+{% for booking in bookings %}
+    <li>Car ID: {{ booking.car_id }} | Dates: {{ booking.start_date }} to {{ booking.end_date }} | Paid: {{ booking.paid }}</li>
+{% endfor %}
+</ul>
+{% endblock %}
