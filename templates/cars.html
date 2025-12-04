@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}Cars{% endblock %}
+{% block content %}
+<h2>Available Cars</h2>
+<ul>
+{% for car in cars %}
+    <li><a href="{{ url_for('car_detail', car_id=car.id) }}">{{ car.model }} - ${{ car.price_per_day }}/day</a></li>
+{% endfor %}
+</ul>
+{% endblock %}
