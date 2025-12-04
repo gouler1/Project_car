@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}Admin{% endblock %}
+{% block content %}
+<h2>Add New Car</h2>
+<form method="POST">
+    {{ form.hidden_tag() }}
+    {{ form.model.label }} {{ form.model() }}
+    {{ form.price_per_day.label }} {{ form.price_per_day() }}
+    {{ form.submit() }}
+</form>
+<h3>Existing Cars</h3>
+<ul>
+{% for car in cars %}
+    <li>{{ car.model }}</li>
+{% endfor %}
+</ul>
+{% endblock %}
