@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}{{ car.model }}{% endblock %}
+{% block content %}
+<h2>{{ car.model }}</h2>
+<p>Price: ${{ car.price_per_day }}/day</p>
+<h3>Book this car</h3>
+<form method="POST">
+    {{ form.hidden_tag() }}
+    {{ form.start_date.label }} {{ form.start_date() }}
+    {{ form.end_date.label }} {{ form.end_date() }}
+    {{ form.submit() }}
+</form>
+{% endblock %}
